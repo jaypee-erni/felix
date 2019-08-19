@@ -16,7 +16,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
     ],
     declarations: [
-        UsersIndexComponent, UsersDetailComponent
+        UsersIndexComponent, UsersDetailComponent,
     ],
   })
 

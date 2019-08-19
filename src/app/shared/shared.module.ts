@@ -14,6 +14,7 @@ import { SnackbarComponent } from './component/snackbar/snackbar.component';
 /** Services */
 import { UsersService } from './services/users/users.service';
 import { ApiService } from '../core/http/api.service';
+import { BasicTableComponent } from './component/basic-table/basic-table.component';
 
 @NgModule({
     imports: [
@@ -26,9 +27,10 @@ import { ApiService } from '../core/http/api.service';
     exports: [
         MaterialModule,
         FormsModule, ReactiveFormsModule,
+        BasicTableComponent,
     ],
     providers: [UsersService, ApiService],
-    declarations: [OutletComponent, SidebarComponent, SnackbarComponent],
+    declarations: [OutletComponent, SidebarComponent, SnackbarComponent, BasicTableComponent],
     entryComponents: [SnackbarComponent],
     bootstrap: []
   })
