@@ -1,0 +1,15 @@
+<div class="confirmation-modal">
+    <span class="mat-title capitalize">{{ data.title }}
+    </span>
+
+    <div class="confirmation-modal-body">
+        <ng-template [cdkPortalOutlet]="portal"></ng-template>
+    </div>
+    <div class="modal-controls" *ngIf="data.buttons">
+        <button mat-raised-button (click)="action('cancel')" data-access-id='confirm-btn-cancel' id='confirm-btn-cancel'
+        i18n="@@confirmation-modal.confirm-btn-cancel">{{data.no}}</button>
+        <button mat-button mat-raised-button color="primary" mat-dialog-close (click)="action('confirm')"
+        data-access-id='confirm-btn-confirm' id='confirm-btn-confirm'
+        i18n="@@confirmation-modal.confirm-btn-confirm"> {{data.yes}}  </button>
+    </div>
+</div>

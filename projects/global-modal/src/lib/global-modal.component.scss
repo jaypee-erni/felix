@@ -1,0 +1,37 @@
+.confirmation-modal {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  overflow-x: hidden;
+
+  .modal-controls {
+    justify-content: flex-end;
+    align-content: flex-end;
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+}
+
+.confirmation-modal-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.capitalize::first-letter {
+  text-transform: capitalize;
+}
+
+.mat-title {
+  margin-bottom: 12px;
+}
+
+.mat-dialog-container {
+    overflow: hidden;
+}
+.mat-dialog-container .mat-raised-button {
+  margin-left: 16px !important;
+}
+  

@@ -17,7 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "global-modal": [
+        "dist/global-modal"
+      ],
+      "global-modal/*": [
+        "dist/global-modal/*"
+      ],
+      "global-snackbar": [
+        "dist/global-snackbar"
+      ],
+      "global-snackbar/*": [
+        "dist/global-snackbar/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
