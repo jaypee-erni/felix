@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, ViewEncapsulation } from '@angular/core';
+import { MAT_SNACK_BAR_DATA } from '@angular/material';
 
 @Component({
   selector: 'gs-global-snackbar',
-  template: `
-    <p>
-      global-snackbar works!
-    </p>
-  `,
-  styles: []
+  templateUrl: './global-snackbar.component.html',
+  styleUrls: ['./global-snackbar.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class GlobalSnackbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(MAT_SNACK_BAR_DATA) public data: any
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  get_class_name(): string {
+    if (this.data.success === true) {
+      return 'success';
+    }
+    return 'error';
+
   }
-
 }

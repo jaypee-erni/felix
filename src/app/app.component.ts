@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmationModalComponent } from './shared/modals/confirmation-modal/confirmation-modal.component';
 import { ApiService } from './core/http/api.service';
 import { UsersService } from './shared/services/users/users.service';
 import { Observable } from 'rxjs';
 import { StateUserListModel } from './shared/models/state-management/users/user-list.model';
 import { GlobalModalComponent } from 'global-modal';
-import { SnackbarComponent } from './shared/component/snackbar/snackbar.component';
+import { GlobalSnackbarService } from 'global-snackbar';
 import { Store } from '@ngrx/store';
 import * as userAction from './components/users/store/user.action';
-//import * as faker from 'faker';
+import * as faker from 'faker';
 
 @Component({
   selector: 'app-root',
@@ -22,14 +21,20 @@ export class AppComponent {
   public user: string;
   public userStore: Observable<StateUserListModel[]>;
   constructor(
-    private apiService: ApiService,
-    private userService: UsersService,
-    private dialog: MatDialog,
-    private store: Store<any>,
-    private snackBar: MatSnackBar,
+    private readonly apiService: ApiService,
+    private readonly userService: UsersService,
+    private readonly dialog: MatDialog,
+    private readonly store: Store<any>,
+    private readonly snackBar2: GlobalSnackbarService,
     ) {
     this.refresh_joke();
   }
+
+  /**
+   * responsible for shwing modal by using Global Modal declared in projects
+   * @param none void
+   * @return void
+   */
 
   public modal_dialog() {
     this.dialog.open(GlobalModalComponent, {
@@ -51,6 +56,12 @@ export class AppComponent {
       this.user = ret['name'];
     });
   }
+
+  /**
+   * responsible for shwing modal by using Global Modal declared in projects
+   * @param type string
+   * @return void
+   */
 
   public changeuser(type: string = 'encoder'): void {
     let uclaim = 'WyJtZW51LnVzZXItZGV0YWlsIiwibWVudS51c2VyLWluZGV4Il0=';
@@ -74,31 +85,43 @@ export class AppComponent {
       console.log('from store: ', this.userStore);
     });
   }
+  /**
+   * adds a random user in a storage
+   * @param none void
+   * @return void
+   */
   add_state() {
-    /*const newUSer: StateUserListModel = {
-      id: faker.random.number(),
-      name: faker.random.word(),
-      username: faker.random.word(),
-      email: `${faker.random.word}@test.com`,
-    };*/
     const newUSer: StateUserListModel = {
       id: 1,
-      name: 'jaypee',
-      username: 'gipipoy',
-      email: 'test@test.com',
+      name: faker.name.firstName(),
+      username: faker.name.lastName(),
+      email: `${faker.name.firstName()}@test.com`,
     };
     this.store.dispatch(new userAction.AddUser(newUSer));
   }
 
+  /**
+   * adds a random user in a api
+   * @param none void
+   * @return void
+   */
   new_user(): void {
-    this.userService.save(0, {title: 'this is new title', author: 'adam smith'}).subscribe(ret => {
+    //  {title: faker.random.word(), author: faker.name}
+    this.userService.save(0, {title: faker.random.words(), author: `${faker.name.firstName()} ${faker.name.lastName()}`}).subscribe(ret => {
       console.log(ret);
     });
   }
 
+  /**
+   * show the snackbar if there is a response in the backend
+   * @param none void
+   * @return void
+   */
   show_snackbar(): void {
-    this.snackBar.openFromComponent(SnackbarComponent, {
-      duration: 2 * 1000,
-    });
+    this.snackBar2.openSuccess('Success!.');
+  }
+
+  show_snackbarError(): void {
+    this.snackBar2.openError('This is error chos!');
   }
 }
