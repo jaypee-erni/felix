@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmationModalComponent } from './shared/modals/confirmation-modal/confirmation-modal.component';
 import { ApiService } from './core/http/api.service';
 import { UsersService } from './shared/services/users/users.service';
@@ -8,10 +7,9 @@ import { Observable } from 'rxjs';
 import { StateUserListModel } from './shared/models/state-management/users/user-list.model';
 import { GlobalModalComponent } from 'global-modal';
 import { GlobalSnackbarService } from 'global-snackbar';
-import { SnackbarComponent } from './shared/component/snackbar/snackbar.component';
 import { Store } from '@ngrx/store';
 import * as userAction from './components/users/store/user.action';
-// import * as faker from 'faker';
+import * as faker from 'faker';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +25,6 @@ export class AppComponent {
     private readonly userService: UsersService,
     private readonly dialog: MatDialog,
     private readonly store: Store<any>,
-    private readonly snackBar: MatSnackBar,
     private readonly snackBar2: GlobalSnackbarService,
     ) {
     this.refresh_joke();
@@ -96,25 +93,35 @@ export class AppComponent {
   add_state() {
     const newUSer: StateUserListModel = {
       id: 1,
-      name: 'jaypee',
-      username: 'gipipoy',
-      email: 'test@test.com',
+      name: faker.name.firstName(),
+      username: faker.name.lastName(),
+      email: `${faker.name.firstName()}@test.com`,
     };
     this.store.dispatch(new userAction.AddUser(newUSer));
   }
 
+  /**
+   * adds a random user in a api
+   * @param none void
+   * @return void
+   */
   new_user(): void {
-    this.userService.save(0, {title: 'this is new title', author: 'adam smith'}).subscribe(ret => {
+    //  {title: faker.random.word(), author: faker.name}
+    this.userService.save(0, {title: faker.random.words(), author: `${faker.name.firstName()} ${faker.name.lastName()}`}).subscribe(ret => {
       console.log(ret);
     });
   }
 
+  /**
+   * show the snackbar if there is a response in the backend
+   * @param none void
+   * @return void
+   */
   show_snackbar(): void {
-    /*this.snackBar.openFromComponent(SnackbarComponent, {
-      duration: 2 * 1000,
-    });*/
-    
-    this.snackBar2.openSuccess('this is the message comming from testing asa');
-    
+    this.snackBar2.openSuccess('Success!.');
+  }
+
+  show_snackbarError(): void {
+    this.snackBar2.openError('This is error chos!');
   }
 }

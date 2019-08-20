@@ -1,0 +1,35 @@
+snack-bar-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .global-snack-bar-container {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: stretch;
+    border-radius: 5px;
+    background-color: #323232;
+  
+    p.success {
+      border: 3px solid rgba(19, 231, 44, 0.87);;
+      color: rgba(19, 231, 44, 0.87);
+  
+      .pocit-snack-bar-icon-wrapper {
+        background-color: #fff;
+  
+        svg {
+         //  color: $pocit-color-status-green;
+        }
+      }
+    }
+  
+    p.error {
+      background-color: red;
+      border-color: #323232;
+      color: blue;
+    }
+  
+  
+  }
+}

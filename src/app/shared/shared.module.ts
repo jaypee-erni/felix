@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
 /** Components */
 import { OutletComponent } from './component/outlet/outlet.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
-import { SnackbarComponent } from './component/snackbar/snackbar.component';
 
 /** Services */
 import { UsersService } from './services/users/users.service';
@@ -30,8 +29,8 @@ import { BasicTableComponent } from './component/basic-table/basic-table.compone
         BasicTableComponent,
     ],
     providers: [UsersService, ApiService],
-    declarations: [OutletComponent, SidebarComponent, SnackbarComponent, BasicTableComponent],
-    entryComponents: [SnackbarComponent],
+    declarations: [OutletComponent, SidebarComponent, BasicTableComponent],
+    entryComponents: [],
     bootstrap: []
   })
   export class SharedModule {}
