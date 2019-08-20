@@ -15,5 +15,4 @@ export class GlobalSnackbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

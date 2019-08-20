@@ -7,10 +7,11 @@ import { UsersService } from './shared/services/users/users.service';
 import { Observable } from 'rxjs';
 import { StateUserListModel } from './shared/models/state-management/users/user-list.model';
 import { GlobalModalComponent } from 'global-modal';
+import { GlobalSnackbarService } from 'global-snackbar';
 import { SnackbarComponent } from './shared/component/snackbar/snackbar.component';
 import { Store } from '@ngrx/store';
 import * as userAction from './components/users/store/user.action';
-//import * as faker from 'faker';
+// import * as faker from 'faker';
 
 @Component({
   selector: 'app-root',
@@ -22,14 +23,21 @@ export class AppComponent {
   public user: string;
   public userStore: Observable<StateUserListModel[]>;
   constructor(
-    private apiService: ApiService,
-    private userService: UsersService,
-    private dialog: MatDialog,
-    private store: Store<any>,
-    private snackBar: MatSnackBar,
+    private readonly apiService: ApiService,
+    private readonly userService: UsersService,
+    private readonly dialog: MatDialog,
+    private readonly store: Store<any>,
+    private readonly snackBar: MatSnackBar,
+    private readonly snackBar2: GlobalSnackbarService,
     ) {
     this.refresh_joke();
   }
+
+  /**
+   * responsible for shwing modal by using Global Modal declared in projects
+   * @param none void
+   * @return void
+   */
 
   public modal_dialog() {
     this.dialog.open(GlobalModalComponent, {
@@ -51,6 +59,12 @@ export class AppComponent {
       this.user = ret['name'];
     });
   }
+
+  /**
+   * responsible for shwing modal by using Global Modal declared in projects
+   * @param type string
+   * @return void
+   */
 
   public changeuser(type: string = 'encoder'): void {
     let uclaim = 'WyJtZW51LnVzZXItZGV0YWlsIiwibWVudS51c2VyLWluZGV4Il0=';
@@ -74,13 +88,12 @@ export class AppComponent {
       console.log('from store: ', this.userStore);
     });
   }
+  /**
+   * adds a random user in a storage
+   * @param none void
+   * @return void
+   */
   add_state() {
-    /*const newUSer: StateUserListModel = {
-      id: faker.random.number(),
-      name: faker.random.word(),
-      username: faker.random.word(),
-      email: `${faker.random.word}@test.com`,
-    };*/
     const newUSer: StateUserListModel = {
       id: 1,
       name: 'jaypee',
@@ -97,8 +110,11 @@ export class AppComponent {
   }
 
   show_snackbar(): void {
-    this.snackBar.openFromComponent(SnackbarComponent, {
+    /*this.snackBar.openFromComponent(SnackbarComponent, {
       duration: 2 * 1000,
-    });
+    });*/
+    
+    this.snackBar2.openSuccess('this is the message comming from testing asa');
+    
   }
 }

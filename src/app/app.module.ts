@@ -15,6 +15,8 @@ import { HeaderInterceptor } from './core/http/header-interceptor';
 
 /** Project created  */
 import { GlobalModalModule } from 'global-modal';
+//import { GlobalSnackbarModule } from 'global-snackbar';
+//import { GlobalSnackbarComponent } from 'global-snackbar';
 
 /** Import statemanagement */
 import { StoreModule } from '@ngrx/store';
@@ -27,6 +29,7 @@ import { reducer } from './components/users/store/user.reducer';
     BrowserModule,
     BrowserAnimationsModule,
     GlobalModalModule,
+    //GlobalSnackbarModule,
     AppRoutingModule,
     MatFormFieldModule,
     SharedModule,
@@ -36,6 +39,7 @@ import { reducer } from './components/users/store/user.reducer';
   ],
   declarations: [
     AppComponent,
+    //GlobalSnackbarComponent,
 
   ],
   exports: [],

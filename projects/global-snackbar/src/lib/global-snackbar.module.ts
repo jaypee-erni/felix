@@ -7,6 +7,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   imports: [
     MatSnackBarModule
   ],
-  exports: [GlobalSnackbarComponent]
+  exports: [GlobalSnackbarComponent],
+  entryComponents: [GlobalSnackbarComponent],
 })
 export class GlobalSnackbarModule { }
