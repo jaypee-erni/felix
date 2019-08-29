@@ -3,16 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BasicTableComponent } from './basic-table.component';
 import { MaterialModule } from 'src/app/core/material/material.module';
+import { MockRouterStub } from '../../models/unit-test-class/service';
 
 export const dataSource: any = {
   id: 1, title: 'testTitle', author: 'test author'
 };
-
-export class RouterStub {
-  navigate(params) {
-    // params value will be depending on the route provided in component
-  }
-}
 
 describe('BasicTableComponent', () => {
   let component: BasicTableComponent;
@@ -26,7 +21,7 @@ describe('BasicTableComponent', () => {
         CUSTOM_ELEMENTS_SCHEMA
       ],
       providers: [
-        { provide: Router, useClass: RouterStub, },
+        { provide: Router, useClass: MockRouterStub, },
       ]
     })
     .compileComponents();

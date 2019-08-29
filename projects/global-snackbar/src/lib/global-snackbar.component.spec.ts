@@ -1,6 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MAT_SNACK_BAR_DATA } from '@angular/material';
+import { of } from 'rxjs';
 import { GlobalSnackbarComponent } from './global-snackbar.component';
+
+export const mockData = { success: 'this is test' };
+export class MockMatDialogStub {
+  open() {
+    return {
+      data : {},
+      afterClosed: () => of('confirm')
+    };
+  }
+}
 
 describe('GlobalSnackbarComponent', () => {
   let component: GlobalSnackbarComponent;
@@ -8,7 +19,10 @@ describe('GlobalSnackbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GlobalSnackbarComponent ]
+      declarations: [ GlobalSnackbarComponent ],
+      providers: [
+        { provide: MAT_SNACK_BAR_DATA, useValue: mockData },
+      ],
     })
     .compileComponents();
   }));

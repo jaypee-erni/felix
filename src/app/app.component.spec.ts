@@ -5,23 +5,9 @@ import { ApiService } from './core/http/api.service';
 import { of, Observable, throwError } from 'rxjs';
 import { Store, StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
+import { MockApiService, MockMatDialogStub } from './shared/models/unit-test-class/service';
 
-export class mockApiService {
-  get(url): Observable<any> {
-    if (url.indexOf('throwerrorUnitTest') > -1) {
-      return throwError(500);
-    }
-    return of(true);
-  }
-}
-export class MockMatDialogStub {
-  open() {
-    return {
-      data : {},
-      afterClosed: () => of('confirm')
-    };
-  }
-}
+
 export const matDialogRefStub = {
   close: () => { }
 };
@@ -42,7 +28,7 @@ describe('AppComponent', () => {
       ],
       providers: [
         Store,
-        { provide: ApiService, useClass: mockApiService },
+        { provide: ApiService, useClass: MockApiService },
         { provide: MatDialog, useClass: MockMatDialogStub },
       ]
     }).compileComponents();

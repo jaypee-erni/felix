@@ -44,3 +44,5 @@ ng build global-snackbar
 #INSTALL JSON SERVER
 npm install -g json-server
 json-server --watch db.json
+
+Default Repo: https://erniegh@dev.azure.com/erniegh/NexOwn-Revamp/_git/Frontend

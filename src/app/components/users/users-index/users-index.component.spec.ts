@@ -5,26 +5,11 @@ import { UsersIndexComponent } from './users-index.component';
 import { ApiService } from 'src/app/core/http/api.service';
 import { UserListModel } from '../../../shared/models/users/user-list.model';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MockApiService, MockRouterStub } from 'src/app/shared/models/unit-test-class/service';
 
-
-export class mockApiService {
-  get(url): Observable<any> {
-    if (url.indexOf('throwerrorUnitTest') > -1) {
-      return throwError(500);
-    }
-    return of([{
-      id: 1, title: 'test', author: 'testauthor'
-    }]);
-  }
-}
 export const dataSource: UserListModel = {
   id: 1, title: 'testTitle', author: 'test author'
 };
-export class RouterStub {
-  navigate(params) {
-    // params value will be depending on the route provided in component
-  }
-}
 
 describe('UsersIndexComponent', () => {
   let component: UsersIndexComponent;
@@ -35,8 +20,8 @@ describe('UsersIndexComponent', () => {
       declarations: [ UsersIndexComponent ],
       imports: [SharedModule],
       providers: [
-        { provide: ApiService, useClass: mockApiService },
-        { provide: Router, useClass: RouterStub, },
+        { provide: ApiService, useClass: MockApiService },
+        { provide: Router, useClass: MockRouterStub, },
       ],
     })
     .compileComponents();
