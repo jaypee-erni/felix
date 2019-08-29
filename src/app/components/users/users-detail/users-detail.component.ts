@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from 'src/app/core/http/api.service';
 import { UserDetailModel } from '../../../shared/models/users/user-detail.model';
+import { UsersService } from 'src/app/shared/services/users/users.service';
 
 @Component({
   selector: 'app-users-detail',
@@ -21,13 +22,15 @@ export class UsersDetailComponent implements OnInit {
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute,
     private readonly apiService: ApiService,
+    private readonly userService: UsersService,
     ) { }
 
   ngOnInit() {
     this.form = this.fb.group({
       id: [''],
       title: [''],
-      author: ['']
+      author: [''],
+      test_error_item: ['']
     });
     this.activatedRoute.params.subscribe(params => {
       this.currentID = params.id;
@@ -38,6 +41,18 @@ export class UsersDetailComponent implements OnInit {
       this.form.controls.title.setValue( ret.title  );
       this.form.controls.author.setValue(ret.author);
     });
+  }
+
+  test_error_return() {
+    this.userService.logError().subscribe(ret => {
+      console.log(ret);
+    }, error => {
+      this.form.controls['test_error_item'].setErrors({ serverError: true, message: 'asa error'});
+    });
+  }
+
+  field(field: string) {
+    return this.form.controls[field];
   }
 
 }
