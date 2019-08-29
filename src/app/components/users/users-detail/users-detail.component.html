@@ -11,5 +11,17 @@
         <mat-form-field>
             <input matInput placeholder="Input" formControlName="author">
         </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Input" formControlName="test_error_item">
+            <mat-error *ngIf="field('test_error_item').hasError('serverError')" >
+            <span i18n="@@users-detail.test-server-error" data-access-id='test-server-error'
+            id='test-server-error'> {{ field('test_error_item').errors.message }} &ensp;</span>
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        
+        <button mat-raised-button (click)="test_error_return()" data-access-id='user-detail-check' id='user-detail-check'
+        i18n="@@users-detail.user-detail-check">Show Custom Error </button>
     </form>
 </div>

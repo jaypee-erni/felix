@@ -33,6 +33,12 @@ export class UsersService {
     });
   }
 
+  logError(): Observable<Object> {
+    return this.apiService.post(`/postsError`, {
+      author: 'test', title: 'test',
+    });
+  }
+
   save(id: number = 0, payload: any = {}): Observable<Object> {
     if (id) {
       return this.apiService.put(`/posts/${id}`, payload);
