@@ -2,6 +2,8 @@ snack-bar-container {
   position: absolute;
   top: 0;
   right: 0;
+  background-color: #fff !important;// bypass default color
+  padding: 15.3px 16px !important;// bypass default padding
 
   .global-snack-bar-container {
     display: flex;
@@ -9,27 +11,14 @@ snack-bar-container {
     align-content: stretch;
     justify-content: stretch;
     border-radius: 5px;
-    background-color: #323232;
-  
-    p.success {
-      border: 3px solid rgba(19, 231, 44, 0.87);;
-      color: rgba(19, 231, 44, 0.87);
-  
-      .pocit-snack-bar-icon-wrapper {
-        background-color: #fff;
-  
-        svg {
-         //  color: $pocit-color-status-green;
-        }
-      }
+    background-color: #fff;
+    p {
+      font-size: 16px;
+      color: #494949
     }
-  
     p.error {
-      background-color: red;
-      border-color: #323232;
-      color: blue;
+      color: #ce202a;
     }
-  
   
   }
 }
