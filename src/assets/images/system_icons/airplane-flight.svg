@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Icon_Flight_Takeoff_Filled" width="24" height="24" data-name="Icon / Flight Takeoff / Filled" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#0084bc}
+        </style>
+    </defs>
+    <path id="Box" d="M0 0h24v24H0z" class="cls-1"/>
+    <path id="Path_2002" d="M530.5-5h19v2h-19zm19.57-9.36a1.5 1.5 0 0 0-1.84-1.06L542.92-14l-6.9-6.43-1.93.51 4.14 7.17-4.97 1.33-1.97-1.54-1.45.39 1.82 3.16.77 1.33 1.6-.43 5.31-1.42 4.35-1.16 5.31-1.42a1.522 1.522 0 0 0 1.07-1.85z" class="cls-2" data-name="Path 2002" transform="translate(-528 24)"/>
+</svg>
