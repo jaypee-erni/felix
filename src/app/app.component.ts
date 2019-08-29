@@ -118,7 +118,7 @@ export class AppComponent {
    * @return void
    */
   show_snackbar(): void {
-    this.snackBar2.openSuccess('Success!.');
+    this.snackBar2.openSuccess('Message Example Success');
   }
 
   show_snackbarError(): void {

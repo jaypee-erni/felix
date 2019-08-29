@@ -20,6 +20,7 @@ import { GlobalSnackbarModule } from 'global-snackbar';
 /** Import statemanagement */
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './components/users/store/user.reducer';
+import { CustomIconDirective } from './core/directives/custom-icon.directive';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { reducer } from './components/users/store/user.reducer';
   ],
   declarations: [
     AppComponent,
+    CustomIconDirective,
   ],
   exports: [],
   providers: [

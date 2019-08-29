@@ -2,7 +2,7 @@
 <div class="header-toolbar">
     <!-- <app-toolbar></app-toolbar> -->
 </div>
-<router-outlet></router-outlet>
+<router-outlet appCustomIcon></router-outlet>
 
 <div class="modal-controls">
     <button mat-raised-button (click)="refresh_joke()" data-access-id='confirm-btn-refresh' id='confirm-btn-refresh'
@@ -34,6 +34,7 @@
     i18n="@@home-component.confirm-btn-snackbar-success">Show Snackbar</button>
 
     <button mat-raised-button (click)="show_snackbarError()" data-access-id='confirm-btn-snackbar-error' id='confirm-btn-snackbar-error'
-    i18n="@@home-component.confirm-btn-snackbar-error">Show Snackbar Error</button>
+    i18n="@@home-component.confirm-btn-snackbar-error">Show Snackbar Error <mat-icon svgIcon="finger-print"></mat-icon> </button>
+    
 
 </div>
