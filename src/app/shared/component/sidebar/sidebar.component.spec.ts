@@ -3,15 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of, Observable, throwError } from 'rxjs';
 import { SidebarComponent } from './sidebar.component';
 import { ApiService } from 'src/app/core/http/api.service';
-
-export class mockApiService {
-  get(url): Observable<any> {
-    if (url.indexOf('throwerrorUnitTest') > -1) {
-      return throwError(500);
-    }
-    return of(true);
-  }
-}
+import { MockApiService } from '../../models/unit-test-class/service';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -22,7 +14,7 @@ describe('SidebarComponent', () => {
       declarations: [ SidebarComponent ],
       imports: [RouterTestingModule],
       providers: [
-        { provide: ApiService, useClass: mockApiService },
+        { provide: ApiService, useClass: MockApiService },
       ]
     })
     .compileComponents();

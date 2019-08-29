@@ -2,20 +2,12 @@ import { TestBed } from '@angular/core/testing';
 import { UsersService } from './users.service';
 import { of, Observable, throwError } from 'rxjs';
 import { ApiService } from 'src/app/core/http/api.service';
-
-export class mockApiService {
-  get(url): Observable<any> {
-    if (url.indexOf('throwerrorUnitTest') > -1) {
-      return throwError(500);
-    }
-    return of(true);
-  }
-}
+import { MockApiService } from '../../models/unit-test-class/service';
 
 describe('Users.ServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
-      { provide: ApiService, useClass: mockApiService },
+      { provide: ApiService, useClass: MockApiService },
     ]
   }));
 

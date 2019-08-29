@@ -5,27 +5,7 @@ import { of, Observable, throwError } from 'rxjs';
 import { ReactiveFormsModule, FormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { UsersDetailComponent } from './users-detail.component';
 import { ApiService } from 'src/app/core/http/api.service';
-
-export class RouterStub {
-  navigate(params) {
-    // params value will be depending on the route provided in component
-  }
-}
-
-export class mockApiService {
-  get(url): Observable<any> {
-    if (url.indexOf('throwerrorUnitTest') > -1) {
-      return throwError(500);
-    }
-    return of(true);
-  }
-}
-
-export class activeRouteRet {
-  get params() {
-    return of(true);
-  }
-}
+import { MockApiService, MockActiveRoute, MockRouterStub } from 'src/app/shared/models/unit-test-class/service';
 
 describe('UsersDetailComponent', () => {
   let component: UsersDetailComponent;
@@ -40,10 +20,10 @@ describe('UsersDetailComponent', () => {
       ],
       providers: [
         FormBuilder,
-        { provide: ApiService, useClass: mockApiService },
+        { provide: ApiService, useClass: MockApiService },
         { provide: FormGroup, useValue: {} },
-        { provide: ActivatedRoute, useClass: activeRouteRet },
-        { provide: Router, useClass: RouterStub, },
+        { provide: ActivatedRoute, useClass: MockActiveRoute },
+        { provide: Router, useClass: MockRouterStub, },
       ],
     })
     .compileComponents();

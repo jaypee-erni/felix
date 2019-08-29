@@ -106,7 +106,6 @@ export class AppComponent {
    * @return void
    */
   new_user(): void {
-    //  {title: faker.random.word(), author: faker.name}
     this.userService.save(0, {title: faker.random.words(), author: `${faker.name.firstName()} ${faker.name.lastName()}`}).subscribe(ret => {
       console.log(ret);
     });
