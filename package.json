@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packages:build": "run-s package:global-modal:build",
-    "package:global-modal:build": "ng build global-modal && npm link dist/global-modal"
+    "packages:build": "run-s package:global-modal:build && run-s package:global-snackbar:build",
+    "package:global-modal:build": "ng build global-modal && npm link dist/global-modal",
+	"package:global-snackbar:build": "ng build global-snackbar && npm link dist/global-snackbar"
   },
   "private": true,
   "dependencies": {
