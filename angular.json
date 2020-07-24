@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Nexown-Frontend": {
+    "Felix": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Nexown-Frontend",
+            "outputPath": "dist/Felix",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Nexown-Frontend:build"
+            "browserTarget": "Felix:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Nexown-Frontend:build:production"
+              "browserTarget": "Felix:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Nexown-Frontend:build"
+            "browserTarget": "Felix:build"
           }
         },
         "test": {
@@ -110,11 +110,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Nexown-Frontend:serve"
+            "devServerTarget": "Felix:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Nexown-Frontend:serve:production"
+              "devServerTarget": "Felix:serve:production"
             }
           }
         }
@@ -190,5 +190,5 @@
         }
       }
     }},
-  "defaultProject": "Nexown-Frontend"
+  "defaultProject": "Felix"
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, OnChanges } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -8,7 +8,7 @@ import * as d3 from 'd3';
 })
 export class DougnnutFinancialfitnessComponent implements OnInit, OnChanges  {
 
-  @ViewChild('chart') private chartContainer: ElementRef;
+  @ViewChild('chart', null) private chartContainer: ElementRef;
   @Input() private data: Array<any>;
   private margin: any = { top: 210, bottom: 50, left: 50, right: 50};
   private chart: any;
@@ -31,9 +31,9 @@ export class DougnnutFinancialfitnessComponent implements OnInit, OnChanges  {
     const height = 500;
     const radius = Math.min(width, height) / 2;
 
-    const pie = d3.pie()
+    /*const pie = d3.pie()
     .value(function(d) { return d.count; })
-    .sort(null);
+    .sort(null); */
 
     const arc = d3.arc()
     .innerRadius(radius - 100)
@@ -51,7 +51,9 @@ export class DougnnutFinancialfitnessComponent implements OnInit, OnChanges  {
 
   }
 
-  updateChart() {
+  ngOnChanges() {}
+
+  updateChart() {/*
     this.data.forEach( data => {
       const regionsByFruit = d3.nest()
       .key(function(d) { return d.fruit; })
@@ -202,7 +204,7 @@ export class DougnnutFinancialfitnessComponent implements OnInit, OnChanges  {
     }
     return o;
   }
-  }
+*/}
 
   /*ngOnInit() {
     this.createChart();

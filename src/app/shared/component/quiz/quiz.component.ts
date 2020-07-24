@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class QuizComponent implements OnInit {
   @Input() public data;
+  optSlected: any;
+  
   constructor() { }
 
   ngOnInit() {
