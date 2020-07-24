@@ -1,0 +1,16 @@
+<div class = 'title'>
+    <p> {{data.title}} </p>
+</div>
+
+<div class = 'product-container'>
+    <div class = 'each-block'  *ngFor="let item of data.products" >
+        <div class = 'block-content'>
+            <p>{{item.content}} </p>
+        </div>
+        <span> <p> {{item.title}} </p></span>
+    </div>
+</div>
+
+<div class = 'content-tab'>
+    <p> {{data.content}} </p>
+</div>

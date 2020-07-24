@@ -1,0 +1,46 @@
+<div class = 'content-header user-payment'>
+    <div class = 'adds'>
+        <div class = 'header-text-content'>
+            <p> <span>Master</span> of  <span>Transcations</span> </p>
+            <p> Im April hast du Fr. 102x mit VISA bezahlt </p>
+        </div>
+        <div class = 'header-img-content'>
+            <img src="../../../../assets/images/system_icons/cards.png">
+        </div>
+    </div>
+</div>
+
+<mat-tab-group>
+    <mat-tab>
+            <ng-template mat-tab-label>
+                <div>
+                    Kreditkarte
+                </div>
+            </ng-template>
+
+            <ng-container>
+                <app-paymet-tab1> </app-paymet-tab1>
+            </ng-container>
+    </mat-tab>
+    
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <div>
+                Scan & Pay
+            </div>
+        </ng-template>
+        <ng-container>
+            <app-paymet-tab2> </app-paymet-tab2>
+        </ng-container>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <div>
+                Fitness-Quiz
+            </div>
+        </ng-template>
+        <ng-container>
+            <app-paymet-tab3> </app-paymet-tab3>
+        </ng-container>
+    </mat-tab>
+</mat-tab-group>

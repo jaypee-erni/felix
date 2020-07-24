@@ -1,0 +1,62 @@
+@import "../../../../assets/styles/variables";
+div.content-tab-ico-message
+    {
+        p {
+            font-size: $font-main-content-size;
+            margin: 2.5rem 0;
+        }
+    }
+div.content-tab-ico-message {
+    display: flex;
+    img {
+        border-radius: 50%;
+        margin-right: 2rem;
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+    }
+    p {
+        position: relative;
+        vertical-align: bottom;
+        text-align: center;
+        margin-top: -1rem;
+        border-radius: 10px 10px 10px 10px;
+        padding: 0.5rem;
+    }
+    p:before {
+        content: "";
+        border-left: 18px solid transparent;
+        border-bottom: 5px solid transparent;
+        margin-left: -18px;
+        position: absolute;
+        bottom: -3px;
+        z-index: -1;
+    }
+
+}
+
+.users-save-message {
+    p {
+        background-color: $page-save-color;
+    }
+    p:before {
+       border-top: 19px solid $page-save-color;
+    }
+}
+.users-payment-message {
+    p {
+        background-color: $page-payment-color;
+    }
+    p:before {
+        border-top: 19px solid $page-payment-color;
+    }
+}
+
+.users-increase-message {
+    p {
+        background-color: $page-increase-color;
+    }
+    p:before {
+       border-top: 19px solid $page-increase-color;
+    }
+}

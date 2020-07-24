@@ -14,6 +14,11 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { UsersService } from './services/users/users.service';
 import { ApiService } from '../core/http/api.service';
 import { BasicTableComponent } from './component/basic-table/basic-table.component';
+import { ToolbarComponent } from './component/toolbar/toolbar.component';
+import { QuizComponent } from './component/quiz/quiz.component';
+import { TitleTextComponent } from './component/title-text/title-text.component';
+import { IconMessageComponent } from './component/icon-message/icon-message.component';
+import { ProductBlockComponent } from './component/product-block/product-block.component';
 
 @NgModule({
     imports: [
@@ -27,9 +32,14 @@ import { BasicTableComponent } from './component/basic-table/basic-table.compone
         MaterialModule,
         FormsModule, ReactiveFormsModule,
         BasicTableComponent,
+        TitleTextComponent,
+        IconMessageComponent,
+        QuizComponent,
+        ProductBlockComponent,
     ],
     providers: [UsersService, ApiService],
-    declarations: [OutletComponent, SidebarComponent, BasicTableComponent],
+    declarations: [OutletComponent, SidebarComponent, BasicTableComponent,
+        ToolbarComponent, TitleTextComponent, IconMessageComponent, QuizComponent, ProductBlockComponent],
     entryComponents: [],
     bootstrap: []
   })

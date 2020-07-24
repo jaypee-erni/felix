@@ -1,7 +1,181 @@
-app-users-index {
-  app-basic-table {
-    table {
-      // display: flex;
+table.mat-table{
+    td{
+        font-size: 13px;
+        font-family: Roboto;
+        letter-spacing: 0.33px;
+        padding:10px;
+
+        strong{font-size: 16px;}
+        span{
+            &.location{
+                font-size: 16px;
+                letter-spacing: 0.4px;
+                color:#679F38;
+                margin:5px 0;
+            }
+        }
     }
-  }
 }
+
+
+ /*summary / list pages*/
+ app-seller-offer,
+ app-seller,
+ app-nexseller,
+ app-buyer-nda,
+ app-external-offer,
+ app-external,
+ app-user-sellers,
+ app-users-buyer,
+ app-users-admin
+ {
+    mat-table {
+        .mat-form-field-underline { 
+            span {
+                height: 0 !important;
+                padding: 1px;
+            } 
+        }
+        margin-top: 68px;
+        mat-row, mat-header-row {
+            width: 100%;
+            span {
+               color:#424242;
+            }
+        }
+        .cell-2 {
+           flex: 9;
+        }
+        mat-header-row {
+            mat-header-cell {
+                padding: 0 12px;
+            }
+        }
+        mat-row {
+           mat-cell {
+               padding: 15px 10px;
+               flex-direction: column;
+               justify-content: center;
+               align-self: flex-start;
+               span {
+                   padding: 3px 6px;
+                   align-self: flex-start;
+               }
+           }
+           mat-cell.cell-1 {
+               max-width: 170px;
+           }
+
+           mat-cell.cell-3 {
+               justify-content: space-between;
+               height: 100px;
+               div {
+                   padding: 3px 0;
+                   text-align: right;
+                   align-self: flex-end;
+               }
+               .like-view-container {
+                   font-size: 13px;
+                   .ranking {
+                       color: #FDD835;
+                   }
+                   .stats {
+                       color: $like-view-color;
+                   }
+               }
+           }
+        }
+    
+        img {
+           width: 150px;
+           height: 115px;
+           margin-right: 12px;
+        }
+    
+        .title {
+           margin-top: 5px;
+           color: $sidebar-bg;
+           font-weight: bold;
+           font-size: 14px;
+        }
+    
+        .link {
+           color: #0091EA;
+           i {
+               margin-right: 5px;
+           }
+        }
+    
+        .kanton {
+           color: $branche-color;
+        }
+    
+        .sub-title, .description {
+           color: $sub-title;
+           font-size: 12px;
+        }
+
+        .description {
+            word-break: break-all;
+        }
+    
+        .documents { 
+           color: $back-color;
+           font-size: 14px;
+           font-weight: bold;
+           cursor: pointer;
+        }
+    
+        .author {
+           font-size: 11px;
+           color: $mat-list-item-color;
+        }
+    
+        #o_type {
+           padding: 3px 16px;
+           margin: 5px 0px;
+           background-color: #eee;
+           align-self: flex-end;
+           text-transform: uppercase;
+           font-size: 10px;
+        }
+    
+        button.mat-raised-button {
+           cursor: pointer;
+           border: 0;
+           padding: 0 10px;
+           margin: 0 10px 10px 10px;
+           border-radius: 5px;
+           width: 160px;
+           font-size: 14px;
+           height: 2.5rem;
+           display: flex;
+           align-items: center;
+           box-shadow: unset !important;
+        }
+        button.reject {
+           background-color: $nexown-red-light;
+           justify-content: center;
+           span,i {
+               color: $nexown-red;
+           }
+           i {
+               vertical-align: unset;
+               font-size: 14px;
+               margin-right: 5px;
+           }
+        }
+        button.approved {
+           background-color: $nexown-green-light;
+           justify-content: center;
+           span,i {
+               color: #7BB342;
+           }
+           i {
+               vertical-align: unset;
+               font-size: 14px;
+               margin-right: 5px;
+           }
+        }
+    }
+ }

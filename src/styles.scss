@@ -1,1 +1,370 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+@import 'src/styles/variables';
+@import 'src/styles/main.scss';
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+$custom-typography: mat-typography-config($font-family: '"Lato", sans-serif');
+
+$my-color: (
+  50: $color-primary-light,
+  100: $color-primary-light,
+  200: $color-primary-light,
+  300: $color-primary-light,
+  400: $color-primary-light,
+  500: $color-primary-light,
+  600: $color-primary-light,
+  700: $color-primary-light,
+  800: $color-primary-light,
+  900: $color-primary-light,
+  A100: $color-primary-light,
+  A200: $color-primary-light,
+  A400: $color-primary-light,
+  A700: $color-primary-light,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$my-accent-color: (
+  50: $color-grey-light,
+  100: $color-grey-light,
+  200: $color-grey-light,
+  300: $color-grey-light,
+  400: $color-grey-light,
+  500: $color-grey-light,
+  600: $color-grey-light,
+  700: $color-grey-light,
+  800: $color-grey-light,
+  900: $color-grey-light,
+  A100: $color-grey-light,
+  A200: $color-grey-light,
+  A400: $color-grey-light,
+  A700: $color-grey-light,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+@include mat-core($custom-typography);
+$theme-primary: mat-palette($my-color);
+$theme-accent: mat-palette($my-accent-color, A200, A100, A400);
+$theme-warn: mat-palette($mat-red);
+
+$theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+
+@include angular-material-theme($theme);
+
+html, body {
+    box-sizing: border-box;
+    font-size: 50%; // 1rem = 8px; 8px / 16px = 50%
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif !important;
+
+    @include respond(tab-land) {
+      font-size: 43.75%; // 1rem = 7px; 7px / 16px = 43.75%
+    }
+
+    @include respond(big-desktop) {
+      font-size: 62.5%; // 1rem = 10px; 10px / 16px = 62.5%
+    }
+}
+.mat-drawer-content {
+    min-height: 100vh;
+    font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.no-flex {
+  flex: 0;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+
+section.content {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  div.content__spinner {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+  }
+}
+
+.main {
+    padding-left: 4.4rem;
+    padding-top: 4.2rem;
+    padding-right: 7.6rem;
+    color: $color-grey-light;
+
+    .top-section {
+        display: flex;
+        align-items: baseline;
+        border-bottom: 1px solid #e1e1e1;
+        padding-bottom: 1.5rem;
+        margin-bottom: 3rem;
+        min-height: 9rem;
+
+        &__page-title {
+            margin-right: auto;
+            span {
+                font-size: 2.4rem;
+            }
+        }
+
+        &__search-bar {
+
+            &--search-field {
+                width: 43.6rem;
+            }
+
+        }
+
+    }
+
+}
+
+// ========== custom scrollbar ==========
+/* width */
+::-webkit-scrollbar {
+    width: .7rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+// ========== global modal ==========
+.mat-dialog-container {
+    padding: 0 !important;
+    font-size: 50%; // 1rem = 8px; 8px / 16px = 50%
+    font-family: 'Lato', sans-serif !important;
+
+    @include respond(tab-land) {
+      font-size: 43.75%; // 1rem = 7px; 7px / 16px = 43.75%
+    }
+
+    @include respond(big-desktop) {
+      font-size: 62.5%; // 1rem = 10px; 10px / 16px = 62.5%
+    }
+}
+
+// =========== side modal =============
+.side-modal {
+  padding: 0 3rem 6rem 3rem;
+
+  &__control {
+    display: flex;
+    justify-content: flex-end;
+    margin: 3rem 0;
+
+    a {
+      color: $color-grey-light;
+    }
+  }
+
+  &__header {
+    align-items: center;
+
+    &--title {
+      font-size: 2.4rem;
+      color: $color-grey-light;
+      margin-right: 1rem;
+    }
+
+    button.tsm-btn {
+      margin-left: auto;
+    }
+  }
+
+  .side-content {
+    &__divider {
+      margin: 2.5rem 0;
+    }
+
+    &__loader-spinner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+    }
+  }
+
+  .side-modal-list {
+    list-style: none;
+    padding-left: 0;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      line-height: 3rem;
+
+      &--name {
+        margin-right: auto;
+        font-size: 1.4rem;
+      }
+
+      span.icon-status--normal {
+        margin-right: 1.5rem;
+      }
+
+      .action-icon {
+        height: 1.6rem;
+        width: 1.6rem;
+      }
+
+      .action-link {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.top-section__page-title {
+  // font-size: 2.4rem;
+}
+
+.side-popup {
+  position: absolute !important;
+  right: 0;
+  height: 100% !important;
+
+  mat-dialog-container.mat-dialog-container {
+    padding: 0 !important;
+    mat-card.mat-card {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  mat-panel-title {
+    align-items: center;
+  }
+
+  mat-panel-title .icon-yes {
+    padding-bottom: 0;
+  }
+}
+
+.timepicker-backdrop-overlay, .timepicker-overlay {
+  z-index: 3000 !important;
+}
+
+.timepicker {
+  .timepicker__header {
+    background-color: $color-primary-light !important;
+  }
+
+  .clock-face__clock-hand {
+    background-color: $color-primary-light !important;
+
+    &::after {
+      background-color: $color-primary-light !important;
+    }
+
+    &::before {
+      border-color: $color-primary-light !important;
+    }
+  }
+
+  .clock-face__number {
+    > span.active {
+      background-color: $color-primary-light !important;
+    }
+  }
+
+  button:not(.timepicker-dial__item) {
+    color: $color-primary-light !important;
+  }
+}
+
+.search-box {
+  height: 7.12rem;
+}
+
+// for error message remove left padding
+.mat-form-field-subscript-wrapper {
+  padding-left: 0 !important;
+}
+
+// for disable form controls
+.readonly-wrapper {
+  cursor: not-allowed !important;
+}
+
+.readonly-wrapper .readonly-block {
+    pointer-events: none !important;
+}
+
+.search-spacer {
+  padding-top: 2rem;
+}

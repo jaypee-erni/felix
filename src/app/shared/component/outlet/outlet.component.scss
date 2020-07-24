@@ -1,4 +1,7 @@
-.main-container {
-    display: flex;
-    flex: 1;
+.mat-drawer-container{
+    background:transparent;
+}
+
+.mat-drawer-inner-container{
+    overflow: unset;
 }

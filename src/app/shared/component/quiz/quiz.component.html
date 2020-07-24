@@ -1,0 +1,20 @@
+<div class = 'content-tab-questionaire'>
+    <div class = 'title'>
+        <p> {{data.title}} </p>
+    </div>
+    <div class = 'message'>
+        <label id="example-radio-group-label">{{data.subtitle}}</label>
+            <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="questionaire-radio-group"
+            [(ngModel)]="optSlected">
+                <mat-radio-button class="questionaire-radio-button" *ngFor="let item of data.data" [value]="item.value">
+                    {{item.name}}
+                </mat-radio-button>
+            </mat-radio-group>
+        <div class = 'button'>
+            <button mat-button mat-raised-button color="secondary"
+            data-access-id='confirm-btn-check' id='confirm-btn-check'> Check  </button>
+        </div>
+    </div>
+</div>

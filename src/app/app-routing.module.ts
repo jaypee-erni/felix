@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/users/index', // '/users/login',
+    redirectTo: '/users/home', // '/users/login',
     canActivate: [],
     pathMatch: 'full',
   },

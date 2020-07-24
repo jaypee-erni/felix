@@ -1,0 +1,48 @@
+@import "../../../../assets/styles/variables";
+    div.content-tab-questionaire {
+        background-color: $grey-main;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        div.title {
+            p {
+                font-weight: 600;
+                color: #000;
+                font-size: 1.25rem;
+            }
+        }
+        div.message {
+            label#example-radio-group-label {
+                // font-size: 1.25rem;
+            }
+        }
+        div.button {
+            display: flex;
+            justify-content: flex-end;
+            .mat-button:not(.mat-primary) .mat-button-wrapper {
+                color: #000;
+                font-weight: bold;
+            }
+            button {
+                background-color: yellow;
+                padding: .5rem 3rem;
+            }
+        }
+    }
+    
+    .questionaire-radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        mat-radio-button{
+            padding-bottom: 1rem;
+            div.mat-radio-outer-circle {
+                background-color: #fff;
+            }
+            div.mat-radio-inner-circle {
+                background-color: #000;
+            }
+        }
+    }
+    .questionaire-radio-button {
+    margin: 5px;
+    }

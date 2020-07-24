@@ -28,6 +28,20 @@ export class CustomIconDirective {
     this.matIconRegistry.addSvgIcon(`finger-print`,
     this.domSanitizer.bypassSecurityTrustResourceUrl(`${environment.custom_icon_path}/finger-print.svg`)
     );
+
+    this.matIconRegistry.addSvgIcon(`home`,
+    this.domSanitizer.bypassSecurityTrustResourceUrl(`${environment.custom_icon_path}/home.svg`)
+    );
+
+    this.matIconRegistry.addSvgIcon(`savings`,
+    this.domSanitizer.bypassSecurityTrustResourceUrl(`${environment.custom_icon_path}/save.svg`)
+    );
+
+    this.matIconRegistry.addSvgIcon(`message`,
+    this.domSanitizer.bypassSecurityTrustResourceUrl(`${environment.custom_icon_path}/message.svg`)
+    );
+
+    
   }
 
 }

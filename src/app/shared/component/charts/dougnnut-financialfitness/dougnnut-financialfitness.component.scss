@@ -1,0 +1,12 @@
+.analyticsSpace{
+    position: relative;
+    flex: 1;
+    width: 100%;
+  }
+  .d3-chartmyChart{
+    position: absolute;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    top: 20px;
+    left: 20px;
+  }

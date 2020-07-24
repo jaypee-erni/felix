@@ -1,32 +1,37 @@
-<div class="sidebar">
-    <div data-access-id="users-option-menu" class="sidebar-item" *ngIf="menu.users">
-        <!-- <pocit-svg-icon [icon]="USER" class="icon-cim" [routerLink]="'/users/index'"
-            [ngClass]="{'icon-active': currentRoute == 'users'}">
-        </pocit-svg-icon> -->
-        <span i18n class="content-group-title mat-body-2" [routerLink]="'/users/index'"
-            [ngClass]="{'icon-active': currentRoute == 'users'}" i18n="@@user-sidebar-screen.users-label">Users Index</span>
+<mat-nav-list>
+    <div>
+        <a routerLinkActive="active-link" mat-list-item [routerLink]="'/users/home'">
+            <mat-icon svgIcon="home">
+            </mat-icon>
+            <p>Home</p>
+            
+        </a>
     </div>
-    <div data-access-id="groups-option-menu" class="sidebar-item" *ngIf="menu.suppliers">
-        <!-- <pocit-svg-icon [icon]="USER_GROUP" class="icon-cim" [routerLink]="'/user-groups/index'"
-            [ngClass]="{'icon-active': currentRoute == 'user-groups'}">
-        </pocit-svg-icon>  -->
-        <span i18n class="content-group-title mat-body-2" [routerLink]="'/suppliers/index'"
-            [ngClass]="{'icon-active': currentRoute == 'user-groups'}"
-            i18n="@@user-sidebar-screen.user-groups-label">Suppliers Index</span>
+
+    <div>
+        <a routerLinkActive="active-link" mat-list-item [routerLink]="'/users/save'">
+            <mat-icon svgIcon="home"></mat-icon>
+            <p>Sparen</p>
+        </a>
     </div>
-    <div data-access-id="products-option-menu" class="sidebar-item" *ngIf="menu.users">
-        <!-- <pocit-svg-icon [icon]="INSTRUMENT_MODULE" [routerLink]="'/products/index'"
-            class="icon-cim icon-instrument-module" [ngClass]="{'icon-active': currentRoute == 'products'}">
-        </pocit-svg-icon>  -->
-        <span i18n class="content-group-title mat-body-2" [routerLink]="'/suppliers/index'"
-            i18n="@@user-sidebar-screen.instruments-label"
-            [ngClass]="{'icon-active': currentRoute == 'products'}">Other Module1</span>
+
+    <div>
+        <a routerLinkActive="active-link" mat-list-item [routerLink]="'/users/payment'">
+            <mat-icon svgIcon="home"></mat-icon>
+            <p>Sahlungsmittel</p>
+        </a>
     </div>
-    <div data-access-id="settings-option-menu" class="sidebar-item" *ngIf="menu.users">
-        <!-- <pocit-svg-icon [icon]="SETTINGS" class="icon-cim icon-cog" [routerLink]="'/settings/index'"
-            [ngClass]="{'icon-active': currentRoute == 'settings'}"></pocit-svg-icon>  -->
-        <span i18n class="content-group-title mat-body-2" [routerLink]="'/suppliers/index'"
-            i18n="@@user-sidebar-screen.settings-label"
-            [ngClass]="{'icon-active': currentRoute == 'settings'}">Other Module2</span>
+
+    <div>
+        <a routerLinkActive="active-link" mat-list-item [routerLink]="'/users/increase'">
+            <mat-icon svgIcon="home"></mat-icon>
+            <p>Geld vermehren</p>
+        </a>
     </div>
-</div>
+    <div class="sidebar-foot">
+        <mat-form-field>
+            <input matInput >
+            <mat-icon svgIcon="message"></mat-icon> 
+        </mat-form-field>
+    </div>
+</mat-nav-list>

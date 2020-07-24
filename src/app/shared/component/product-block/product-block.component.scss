@@ -1,0 +1,25 @@
+@import '../../../../assets/styles/variables';
+
+app-product-block {
+    div.product-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        div.each-block {
+            div.block-content {
+                background-color: $grey-main;
+                padding: 4em;
+                margin-right: 1rem;
+                p {
+                    color: $red;
+                }
+            }
+            span {
+                display: flex;
+                justify-content: center;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+}

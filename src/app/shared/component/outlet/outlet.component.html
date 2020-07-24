@@ -1,5 +1,11 @@
 <!-- Main template with sidebar -->
-<div class="main-container">
-    <app-sidebar></app-sidebar>
-    <router-outlet></router-outlet>
-</div>
+<!-- <app-toolbar></app-toolbar> -->
+
+<mat-drawer-container class="main-container">
+    <mat-drawer #drawer mode="side" opened class="sidebar dark-theme">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content class="contents">
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

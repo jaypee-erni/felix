@@ -1,0 +1,29 @@
+@import '../../../../../assets/styles/variables';
+
+app-paymet-tab1 {
+    div.right-block {
+        background-color: $page-payment-color;
+    }
+
+    div.left-block {
+        padding-right: 1.5rem;
+    }
+
+    div.right-block-payment {
+        padding: 0 1rem;
+        div.title {
+            text-align: center;
+        }
+    }
+    div.big-box {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 6rem;
+        p {
+            color: $red;
+            font-weight: bold;
+            font-size: 1.5rem;  
+        }
+    }
+}
+    

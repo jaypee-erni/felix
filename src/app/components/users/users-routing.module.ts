@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersIndexComponent } from './users-index/users-index.component';
 import { OutletComponent } from 'src/app/shared/component/outlet/outlet.component';
-import { UsersDetailComponent } from './users-detail/users-detail.component';
+import { UsersIndexComponent } from './users-index/users-index.component';
+import { UsersSaveComponent } from './users-save/users-save.component';
+import { UsersPaymentComponent } from './users-payment/users-payment.component';
+import { UsersIncreaseComponent } from './users-increase/users-increase.component';
 
 const routes: Routes = [
     {
@@ -19,32 +21,31 @@ const routes: Routes = [
       children: [
         {
           path: '',
-          redirectTo: 'login',
+          redirectTo: 'home',
           pathMatch: 'full'
         },
         {
-          path: 'index',
+          path: 'home',
           component: UsersIndexComponent,
           data: { roles: [] },
           //canActivate: [AuthenticationGuard, RoleGuard]
         },
         {
-            path: 'detail/:id',
-            component: UsersDetailComponent,
-            children: [
-              { path: 'edit', component: UsersDetailComponent }
-            ],
-          },
-        /*{
-          path: ':user',
-          component: UsersDetailComponent,
-          data: { roles: [RoleGuardEnum.ADMIN, RoleGuardEnum.RSR] },
-          canActivate: [AuthenticationGuard, RoleGuard],
-          children: [
-            { path: 'edit', component: UsersDetailComponent }
-          ],
-          runGuardsAndResolvers: 'always',
-        },*/
+          path: 'save',
+          component: UsersSaveComponent,
+          data: { roles: [] },
+        },
+        {
+          path: 'payment',
+          component: UsersPaymentComponent,
+          data: { roles: [] },
+        },
+        {
+          path: 'increase',
+          component: UsersIncreaseComponent,
+          data: { roles: [] },
+        },
+
       ]
     },
     {

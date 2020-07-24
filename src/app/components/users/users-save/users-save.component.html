@@ -1,0 +1,46 @@
+<div class = 'content-header user-save'>
+    <div class = 'adds'>
+        <div class = 'header-text-content'>
+            <p> Du <span>sparfuchs</span> </p>
+            <p> Im April hast du Fr. 100.-gespart </p>
+        </div>
+        <div class = 'header-img-content'>
+            <img src="../../../../assets/images/system_icons/fox.png">
+        </div>
+    </div>
+</div>
+
+<mat-tab-group>
+    <mat-tab>
+            <ng-template mat-tab-label>
+                <div>
+                    Steuern
+                </div>
+            </ng-template>
+
+            <ng-container>
+                <app-save-tab1></app-save-tab1>
+            </ng-container>
+    </mat-tab>
+    
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <div>
+                Kostenprognose
+            </div>
+        </ng-template>
+        <ng-container>
+            <app-save-tab2></app-save-tab2>
+        </ng-container>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <div>
+                Fitness-Quiz
+            </div>
+        </ng-template>
+        <ng-container>
+            <app-save-tab3></app-save-tab3>
+        </ng-container>
+    </mat-tab>
+</mat-tab-group>
