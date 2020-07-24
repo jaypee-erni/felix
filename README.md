@@ -1,6 +1,14 @@
-# Felix
+## Felix
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+	# This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+	# Repo: https://github.com/jaypee-erni/felix.git
+
+
+## TO START THE PROJECT
+	# npm install
+	# npm run packages:build
+	# ng serve
+	# Open in the browser: http://localhost:4200/
 
 ## Development server
 
@@ -32,10 +40,4 @@ ng g library global-modal --prefix gm
 ng g library global-snackbar --prefix gs
 
 
-Default Repo: https://github.com/jaypee-erni/felix.git
 
-## TO START THE PROJECT
-	# npm install
-	# npm run packages:build
-	# ng serve
-	# Open in the browser: http://localhost:4200/
