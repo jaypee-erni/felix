@@ -1,4 +1,4 @@
-# NexownFrontend
+# Felix
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
@@ -27,23 +27,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-## Some dependencies installed
-ng new Angular8 --style=scss
-npm install @angular/material@8.1.1
-npm install @angular/cdk@8.1.1 --save
-npm install @ngrx/store@8.2.0 --save
-npm install @types/faker@4.1.5 --save
-
 ## Packages installed
 ng g library global-modal --prefix gm
 ng g library global-snackbar --prefix gs
 
-#INSTALL JSON SERVER
-npm install -g json-server
-json-server --watch db.json
 
-Default Repo: https://erniegh@dev.azure.com/erniegh/NexOwn-Revamp/_git/Frontend
+Default Repo: https://github.com/jaypee-erni/felix.git
 
-##TO START THE PROJECT
-npm install
-npm run packages:build
+## TO START THE PROJECT
+	# npm install
+	# npm run packages:build
+	# ng serve
+	# Open in the browser: http://localhost:4200/
