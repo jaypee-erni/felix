@@ -1,14 +1,22 @@
 ## Felix
 
-	# This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+	# This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
+	# Node Version 10.16.0
+	# Angular Version 8.1.3
+	# Angular-cli Version 8.1.2
 	# Repo: https://github.com/jaypee-erni/felix.git
 
 
-## TO START THE PROJECT
+## TO START THE PROJECT LOCALLY
 	# npm install
 	# npm run packages:build
 	# ng serve
 	# Open in the browser: http://localhost:4200/
+	
+## Build the code to production server
+	# ng build --prod
+	# Go to <project_path>/dist/Felix
+	# Coppy all files and paste to your web server
 
 ## Development server
 
