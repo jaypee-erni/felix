@@ -1,6 +1,6 @@
 export interface TitleTextModel {
     title: string;
-    content: string;
+    content?: string;
 }
 
 export interface QuizContentModel {

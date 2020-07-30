@@ -1,7 +1,7 @@
 <div class = 'title'>
     <p> {{data.title}} </p>
 </div>
-<div class = 'content-tab'>
+<div class = 'content-tab' *ngIf = 'data.content'>
     <p>
         {{ data.content }}
     </p>

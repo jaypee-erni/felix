@@ -405,6 +405,13 @@
         height: 40rem;
         overflow-y: auto;
     }
+    div.content-tab
+    {
+        p {
+            font-size: $font-main-content-size;
+            margin: 2.5rem 0;
+        }
+    }
     mat-tab-body.mat-tab-body {
         padding: 3rem 3rem 0 3rem;
         background-color: #fff;
@@ -416,13 +423,6 @@
                 font-size: $font-title-size-small;
                 color: black;
                 font-weight: 600;
-            }
-        }
-        div.content-tab
-        {
-            p {
-                font-size: $font-main-content-size;
-                margin: 2.5rem 0;
             }
         }
         .questionaire-radio-group {
@@ -446,6 +446,7 @@
         }
         div.left-block {
             background-color:#fff;
+            height: 54rem;
         }
         app-financial-fitness,
         app-ausgaben {

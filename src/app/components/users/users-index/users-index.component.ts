@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ApiService } from 'src/app/core/http/api.service';
 import { UserListModel } from '../../../shared/models/users/user-list.model';
 
 @Component({
   selector: 'app-users-index',
   templateUrl: './users-index.component.html',
-  styleUrls: ['./users-index.component.scss']
+  styleUrls: ['./users-index.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class UsersIndexComponent implements OnInit {
 

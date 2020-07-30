@@ -1,3 +1,28 @@
-<div class = 'title'>
-    <p class = 'normal'>Top 3 &nbsp;<p>Ausgaben</p>
+<app-title-text *ngIf = 'titleD' [data] = "titleD"> </app-title-text>
+
+<div class = 'ausgaben-graph'>
+    <app-dounut-chart [data] = 'data' [title] = "'Du'" [backgroundColor] = "'rgba(245, 247, 191, 0.3)'"></app-dounut-chart>
+    <app-dounut-chart [data] = 'data2' [title] = "'Peer'" [backgroundColor] = "'rgba(245, 247, 191, 0.3)'"></app-dounut-chart>
+</div>
+
+<div class = 'bottom-box'>
+    <div class = 'bottom-box-left'>
+        <app-title-text *ngIf = 'data' [data] = "smallcol"> </app-title-text>
+        <div class = 'bottom-box-left-row2'>
+            <div class = 'header-img-content'>
+                <img src="../../../../../assets/images/system_icons/fox.png">
+            </div> 
+            <div class = 'side-title'>
+                <p>
+                    Im april hast du Fr. 100 - gespart
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    <div class = 'bottom-box-right'>
+        <app-title-text *ngIf = 'titleD' [data] = "bottomright1"> </app-title-text>
+        <app-title-text *ngIf = 'titleD' [data] = "bottomright2"> </app-title-text>
+        <app-title-text *ngIf = 'titleD' [data] = "bottomright3"> </app-title-text>
+    </div>
 </div>

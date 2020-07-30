@@ -1,0 +1,26 @@
+app-line-chart {
+    h2 {
+        color: #2ecc71;
+      }
+      
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #95a5a6;
+        shape-rendering: crispEdges;
+      }
+      
+      .axis text {
+        fill: #95a5a6;
+      }
+      
+      .x.axis path {
+        display: none;
+      }
+      
+      .line {
+        fill: none;
+        stroke: red;
+        stroke-width: 1.5px;
+      }
+}

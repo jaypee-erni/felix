@@ -39,7 +39,8 @@ import { ProductBlockComponent } from './component/product-block/product-block.c
     ],
     providers: [UsersService, ApiService],
     declarations: [OutletComponent, SidebarComponent, BasicTableComponent,
-        ToolbarComponent, TitleTextComponent, IconMessageComponent, QuizComponent, ProductBlockComponent],
+        ToolbarComponent, TitleTextComponent, IconMessageComponent, QuizComponent,
+        ProductBlockComponent],
     entryComponents: [],
     bootstrap: []
   })

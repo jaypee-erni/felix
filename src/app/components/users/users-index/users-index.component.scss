@@ -1,3 +1,18 @@
-div.right-block {
-    background-color:rgba(245, 247, 191, 0.30);
+app-users-index {
+    div.right-block {
+        background-color:rgba(245, 247, 191, 0.30);
+        display: inline;
+    }
+    div.content {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 51rem;
+        padding-bottom: 1rem;
+        div.sub-content {
+            padding: 0rem 3rem 0 3rem;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }

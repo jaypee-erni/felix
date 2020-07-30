@@ -1,0 +1,44 @@
+@import '../../../../../assets/styles/variables';
+app-ausgaben {
+    div.ausgaben-graph {
+        display: flex;
+        flex-direction: column;
+    }
+    div.bottom-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        div.bottom-box-left {
+            padding: 1.25rem 1rem 1rem 1rem;
+            background-color: $page-save-color;
+            max-width: 45%;
+            min-width: 45%;
+        }
+        div.bottom-box-right {
+            padding: 1.25rem 1rem 1rem 1rem;
+            max-width: 45%;
+            min-width: 45%;
+            background-color: $blue-green;
+        }
+    }
+    div.bottom-box-left {
+        display: flex;
+        flex-direction: column;
+
+        div.bottom-box-left-row2 {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            img {
+                width: 7rem;
+                margin-right: 2rem;
+            }
+            div.side-title > p {
+                font-size: 1.25rem;
+                line-height: 3rem;
+                margin: 0;
+                line-height: 2.5rem;
+            }
+        }
+    }
+}

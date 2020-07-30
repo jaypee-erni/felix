@@ -1,14 +1,29 @@
-<div class = 'title'>
-    <p>Deine Financial Fitness</p>
-    <!--
-    <div class = 'chart' *ngIf = 'type === "pie"'>
-        <div class = 'nexown-header-group'>
-            <i class="fas fa-file-alt"></i>
-            <div class = 'nexown-div-title'> Offer Performance </div>
-        </div>
-        <div class = 'body'><canvas id="pieChart" class = 'center' width="350" height="200"></canvas></div>
-        <p> Top 4 as of August 4, 2019 </p>
-    </div> -->
-</div>
+<div class = 'sub-content'>
+    <app-title-text *ngIf = 'smallcol' [data] = "smallcol"> </app-title-text>
 
-<app-dougnnut-financialfitness [data] = 'data'></app-dougnnut-financialfitness>
+    <div class = 'chart-row'>
+        <app-dounut-single-color-chart [title] = "'Budgetieren'" [pieName] = "'pie1'" [pieValue] = "'75'"></app-dounut-single-color-chart>
+        <app-dounut-single-color-chart [title] = "'Sparen'" [pieName] = "'pie2'" [pieValue] = "'25'"></app-dounut-single-color-chart>
+    </div>
+
+    <div class = 'chart-row'>
+        <app-dounut-single-color-chart [title] = "'Budgetieren'" [pieName] = "'pie3'" [pieValue] = "'68'"></app-dounut-single-color-chart>
+        <app-dounut-single-color-chart [title] = "'Sparen'" [pieName] = "'pie4'" [pieValue] = "'68'"></app-dounut-single-color-chart>
+        <app-dounut-single-color-chart [title] = "'Sparen'" [pieName] = "'pie5'" [pieValue] = "'68'"></app-dounut-single-color-chart>
+    </div>
+
+    <div class = 'content-tab'>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing 
+        </p>
+    </div>
+
+    <app-icon-message [className] = '"users-index-page"'></app-icon-message>
+
+    <div class = 'content-tab'>
+        <p>
+            For example, when designing a brochure or book, a designer will insert Lorem ipsum text if the real text is not available.
+        </p>
+    </div>
+    
+</div>

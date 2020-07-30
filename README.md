@@ -47,5 +47,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ng g library global-modal --prefix gm
 ng g library global-snackbar --prefix gs
 
+##D3 Dounut basis
+	# http://embed.plnkr.co/YICxe0/
+	# https://itnext.io/add-interactivity-to-your-charts-in-angular-2-applications-with-d3-js-78fd3718e6fb#fromHistory
+	# https://dev.to/benjaminadk/basketball-stats-through-d3-react-4m10
+
+
 
 

@@ -20,9 +20,9 @@ import { IncreaseTab1Component } from './users-increase/increase-tab1/increase-t
 import { IncreaseTab2Component } from './users-increase/increase-tab2/increase-tab2.component';
 import { IncreaseTab3Component } from './users-increase/increase-tab3/increase-tab3.component';
 import { IncreaseTab4Component } from './users-increase/increase-tab4/increase-tab4.component';
-import { DougnnutFinancialfitnessComponent } from '../../shared/component/charts/dougnnut-financialfitness/dougnnut-financialfitness.component';
-//import { TitleTextComponent } from '../../shared/component/title-text/title-text.component';
-//import { QuizComponent } from '../../shared/component/quiz/quiz.component';
+import { DounutChartComponent } from '../../shared/component/charts/dounut-chart/dounut-chart.component';
+import { DounutSingleColorChartComponent } from '../../shared/component/charts/dounut-single-color-chart/dounut-single-color-chart.component';
+import { LineChartComponent } from '../../shared/component/charts/line-chart/line-chart.component';
 
 
 @NgModule({
@@ -52,7 +52,9 @@ import { DougnnutFinancialfitnessComponent } from '../../shared/component/charts
         IncreaseTab2Component,
         IncreaseTab3Component,
         IncreaseTab4Component,
-        DougnnutFinancialfitnessComponent,
+        DounutChartComponent,
+        DounutSingleColorChartComponent,
+        LineChartComponent,
     ],
   })
 

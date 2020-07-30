@@ -60,3 +60,12 @@ div.content-tab-ico-message {
        border-top: 19px solid $page-increase-color;
     }
 }
+
+.users-index-page {
+    p {
+        background-color: $mat-list-item-bg;
+    }
+    p:before {
+       border-top: 19px solid $mat-list-item-bg;
+    }
+}

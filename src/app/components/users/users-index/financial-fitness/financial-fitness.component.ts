@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { TitleTextModel } from '../../../../shared/models/general/shared-component.model';
 
 @Component({
   selector: 'app-financial-fitness',
   templateUrl: './financial-fitness.component.html',
-  styleUrls: ['./financial-fitness.component.scss']
+  styleUrls: ['./financial-fitness.component.scss'],
 })
 export class FinancialFitnessComponent implements OnInit {
 
   data: any;
+  smallcol: TitleTextModel;
   constructor() { }
 
   ngOnInit() {
-
-  this.data = [];
-  for (let i = 0; i < (8 + Math.floor(Math.random() * 10)); i++) {
-    this.data.push([`Index ${i}`, Math.floor(Math.random() * 100)]);
-  }
+    this.smallcol = {
+      title: 'Deine Financial Fitness',
+      content: '',
+    };
   }
 
 }
