@@ -1,12 +1,80 @@
+@import '../../../../assets/styles/variables';
 app-users-index {
     div.right-block {
-        background-color:rgba(245, 247, 191, 0.30);
+        background-color:$yellow-light;
         display: inline;
+
+        &::after {
+            content:"";
+            position:absolute;
+            height:0;
+            width:0;
+            left:100%;
+            top:0;
+            border:20px solid transparent;
+            border-left: 20px solid red;
+        }
+        
     }
+    div.right-block::after {
+        content:"";
+        position:absolute;
+        height:0;
+        width:0;
+        left:100%;
+        top:0;
+        border:20px solid transparent;
+        border-left: 20px solid red;
+    }
+
+    .arrow-right {
+        cursor: pointer;
+        border-style: dashed;
+        border-color: transparent;
+        border-width: 0.3em;
+        display: -moz-inline-box;
+        display: inline-block;
+        /* Use font-size to control the size of the arrow. */
+        font-size: 100px;
+        height: 0;
+        line-height: 0;
+        position: relative;
+        vertical-align: middle;
+        width: 0;
+        border-left-width: 0.3em;
+        border-left-style: solid;
+        border-left-color: $grey-main-light;
+        left:0.25em;
+        float: right;
+        top: 20rem;
+    }
+
+    .arrow-left {
+        cursor: pointer;
+        border-style: dashed;
+        border-color: transparent;
+        border-width: 0.3em;
+        display: -moz-inline-box;
+        display: inline-block;
+        /* Use font-size to control the size of the arrow. */
+        font-size: 100px;
+        height: 0;
+        line-height: 0;
+        position: relative;
+        vertical-align: middle;
+        width: 0;
+        border-right-width: 0.3em;
+        border-right-style: solid;
+        border-right-color: $grey-main-light;
+        left:-25px;
+        float: left;
+        top: 20rem;
+    }
+
     div.content {
         overflow-y: scroll;
         overflow-x: hidden;
-        height: 51rem;
+        height: 50rem;
         padding-bottom: 1rem;
         div.sub-content {
             padding: 0rem 3rem 0 3rem;

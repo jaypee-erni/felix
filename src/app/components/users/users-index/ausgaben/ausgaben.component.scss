@@ -3,6 +3,16 @@ app-ausgaben {
     div.ausgaben-graph {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+    div.slide-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div.d3-chart {
+        text-align: center;
     }
     div.bottom-box {
         display: flex;
@@ -19,6 +29,22 @@ app-ausgaben {
             max-width: 45%;
             min-width: 45%;
             background-color: $blue-green;
+        }
+    }
+    div.slider-container {
+        display: flex;
+        justify-content: center;
+        div.mat-slider-thumb {
+            background-color: $paginator;
+            border-color: #888;
+        }
+        div.mat-slider-track-fill {
+            //active line
+            background-color: $sidebar-bg;
+        }
+        div.mat-slider-track-background {
+            //inactive line
+            background-color: $sidebar-bg;
         }
     }
     div.bottom-box-left {
