@@ -64,6 +64,7 @@ ng g library global-snackbar --prefix gs
 	# ssh-add name-of-the-private-key-that-doesnt-have-extensionname
 	# enter the passphrase
 	# try pulling: git pull git@github.com:jaypee-erni/felix.git
+	# even pull is a success there are instances that the origin is not yet added so try: git remote add origin git@github.com:jaypee-erni/felix.git
 	
 
 
