@@ -52,6 +52,19 @@ ng g library global-snackbar --prefix gs
 	# https://itnext.io/add-interactivity-to-your-charts-in-angular-2-applications-with-d3-js-78fd3718e6fb#fromHistory
 	# https://dev.to/benjaminadk/basketball-stats-through-d3-react-4m10
 
+	
+## SSH Key needed to access the repo - Creating rsa key
+	# Open Git bash then : ssh-keygen -t rsa -b 4096 -C "users-email"
+	# Make sure to remember the passphrase
+	# Open the .pub file created and send it to the repo owner
+
+## Adding rsa key to the ssh agent
+	# Open/Create the folder you want the project to be in
+	# Open git bash and type: eval $(ssh-agent -s)
+	# ssh-add name-of-the-private-key-that-doesnt-have-extensionname
+	# enter the passphrase
+	# try pulling: git pull git@github.com:jaypee-erni/felix.git
+	
 
 
 
